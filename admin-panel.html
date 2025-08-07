@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Panel | CBMS</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="src/styles/admin-panel.css">
+</head>
+<body>
+  <div class="admin-layout">
+    <!-- SIDEBAR NAVIGATION -->
+    <aside class="admin-sidebar" aria-label="Main Navigation">
+      <div class="sidebar-header">
+        <a class="navbar-brand" href="Index.html"><i class="bi bi-building"></i> CBMS</a>
+        <button class="sidebar-toggle" aria-label="Toggle sidebar"><i class="bi bi-list"></i></button>
+      </div>
+      <nav class="sidebar-nav">
+        <ul>
+          <li><button class="sidebar-link active" data-target="#dashboard" aria-label="Dashboard"><i class="bi bi-speedometer2"></i> <span>Dashboard</span></button></li>
+          <li><button class="sidebar-link" data-target="#users" aria-label="Users"><i class="bi bi-people"></i> <span>Users</span></button></li>
+          <li><button class="sidebar-link" data-target="#projects" aria-label="Projects"><i class="bi bi-kanban"></i> <span>Projects</span></button></li>
+          <li><button class="sidebar-link" data-target="#inventory" aria-label="Inventory"><i class="bi bi-box-seam"></i> <span>Inventory</span></button></li>
+          <li><button class="sidebar-link" data-target="#contacts" aria-label="Contacts"><i class="bi bi-envelope-paper"></i> <span>Contacts</span></button></li>
+          <li><button class="sidebar-link" data-target="#estimator" aria-label="Estimator"><i class="bi bi-stars"></i> <span>Estimator</span></button></li>
+          <li><button class="sidebar-link" data-target="#gallery" aria-label="Gallery"><i class="bi bi-images"></i> <span>Gallery</span></button></li>
+        </ul>
+      </nav>
+    </aside>
+    <!-- MAIN CONTENT AREA -->
+    <div class="admin-main">
+      <!-- TOPBAR -->
+      <header class="admin-topbar">
+        <div class="topbar-left">
+          <h1 class="admin-title">Admin Panel</h1>
+        </div>
+        <div class="topbar-right">
+          <button class="btn btn-outline-secondary btn-sm" aria-label="Notifications"><i class="bi bi-bell"></i></button>
+          <button class="btn btn-outline-secondary btn-sm" aria-label="Profile"><i class="bi bi-person-circle"></i></button>
+        </div>
+      </header>
+      <main class="admin-content">
+        <!-- HERO CARD -->
+        <section class="py-4" id="admin-hero">
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+              <div class="card shadow-lg border-danger admin-hero-card text-center mb-4">
+                <div class="card-body py-4">
+                  <i class="bi bi-shield-lock display-3 text-danger mb-3"></i>
+                  <h1 class="display-5 fw-bold text-danger mb-2">Admin Panel</h1>
+                  <p class="lead mb-0 text-secondary">Manage all users, projects, inventory, contacts, estimations, and gallery with advanced controls and security.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- DASHBOARD WIDGETS ROW -->
+        <section class="container py-4" id="admin-dashboard">
+          <div class="row g-4 justify-content-center">
+            <div class="col-12 col-md-6 col-lg-2">
+              <div class="card text-center shadow-sm dashboard-widget border-danger" tabindex="0" role="button" aria-label="Go to Users section">
+                <div class="card-body py-3">
+                  <i class="bi bi-people display-6 text-danger mb-2"></i>
+                  <h6 class="card-title">Users</h6>
+                  <div class="display-6 fw-bold" id="widget-admin-users">--</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-2">
+              <div class="card text-center shadow-sm dashboard-widget border-danger" tabindex="0" role="button" aria-label="Go to Projects section">
+                <div class="card-body py-3">
+                  <i class="bi bi-kanban display-6 text-danger mb-2"></i>
+                  <h6 class="card-title">Projects</h6>
+                  <div class="display-6 fw-bold" id="widget-admin-projects">--</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-2">
+              <div class="card text-center shadow-sm dashboard-widget border-danger" tabindex="0" role="button" aria-label="Go to Inventory section">
+                <div class="card-body py-3">
+                  <i class="bi bi-box-seam display-6 text-danger mb-2"></i>
+                  <h6 class="card-title">Inventory</h6>
+                  <div class="display-6 fw-bold" id="widget-admin-inventory">--</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-2">
+              <div class="card text-center shadow-sm dashboard-widget border-danger" tabindex="0" role="button" aria-label="Go to Contacts section">
+                <div class="card-body py-3">
+                  <i class="bi bi-envelope-paper display-6 text-danger mb-2"></i>
+                  <h6 class="card-title">Contacts</h6>
+                  <div class="display-6 fw-bold" id="widget-admin-contacts">--</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-2">
+              <div class="card text-center shadow-sm dashboard-widget border-danger" tabindex="0" role="button" aria-label="Go to Estimator section">
+                <div class="card-body py-3">
+                  <i class="bi bi-stars display-6 text-danger mb-2"></i>
+                  <h6 class="card-title">Estimator</h6>
+                  <div class="display-6 fw-bold" id="widget-admin-estimator">--</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-2">
+              <div class="card text-center shadow-sm dashboard-widget border-danger" tabindex="0" role="button" aria-label="Go to Gallery section">
+                <div class="card-body py-3">
+                  <i class="bi bi-images display-6 text-danger mb-2"></i>
+                  <h6 class="card-title">Gallery</h6>
+                  <div class="display-6 fw-bold" id="widget-admin-gallery">--</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- ADMIN PANEL TABS (now as sections, not Bootstrap tabs) -->
+        <section id="users" class="admin-section">
+          <!-- USERS TAB CONTENT -->
+          <div class="card shadow-sm border-0 mb-4" tabindex="0" role="button" aria-label="Users section">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h4 class="mb-0">Users</h4>
+                <button class="btn btn-success btn-sm" id="addUserBtn"><i class="bi bi-plus"></i> Add User</button>
+              </div>
+              <div class="table-responsive">
+                <table class="table table-bordered table-hover table-admin" id="usersTable">
+                  <thead class="table-light">
+                    <tr><th>Name</th><th>Email</th><th>Role</th><th>Actions</th></tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+                <div class="admin-pagination" id="usersPagination"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="projects" class="admin-section d-none">
+          <!-- PROJECTS TAB CONTENT -->
+          <div class="card shadow-sm border-0 mb-4" tabindex="0" role="button" aria-label="Projects section">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h4 class="mb-0">Projects</h4>
+                <button class="btn btn-success btn-sm" id="addProjectBtn"><i class="bi bi-plus"></i> Add Project</button>
+              </div>
+              <div class="table-responsive">
+                <table class="table table-bordered table-hover table-admin" id="projectsTable">
+                  <thead class="table-light">
+                    <tr><th>Name</th><th>Status</th><th>Start</th><th>End</th><th>Actions</th></tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+                <div class="admin-pagination" id="projectsPagination"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="inventory" class="admin-section d-none">
+          <!-- INVENTORY TAB CONTENT -->
+          <div class="card shadow-sm border-0 mb-4" tabindex="0" role="button" aria-label="Inventory section">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h4 class="mb-0">Inventory</h4>
+                <button class="btn btn-success btn-sm" id="addInventoryBtn"><i class="bi bi-plus"></i> Add Item</button>
+              </div>
+              <div class="table-responsive">
+                <table class="table table-bordered table-hover table-admin" id="inventoryTable">
+                  <thead class="table-light">
+                    <tr><th>Name</th><th>Quantity</th><th>Unit</th><th>Supplier</th><th>Actions</th></tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+                <div class="admin-pagination" id="inventoryPagination"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="contacts" class="admin-section d-none">
+          <!-- CONTACTS TAB CONTENT -->
+          <div class="card shadow-sm border-0 mb-4" tabindex="0" role="button" aria-label="Contacts section">
+            <div class="card-body">
+              <h4>Contact Submissions</h4>
+              <div class="table-responsive">
+                <table class="table table-bordered table-hover table-admin" id="contactsTable">
+                  <thead class="table-light">
+                    <tr><th>Name</th><th>Email</th><th>Message</th><th>Date</th></tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+                <div class="admin-pagination" id="contactsPagination"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="estimator" class="admin-section d-none">
+          <!-- ESTIMATOR TAB CONTENT -->
+          <div class="card shadow-sm border-0 mb-4" tabindex="0" role="button" aria-label="Estimator section">
+            <div class="card-body">
+              <h4>AI Estimator Submissions</h4>
+              <div class="table-responsive">
+                <table class="table table-bordered table-hover table-admin" id="estimatorTable">
+                  <thead class="table-light">
+                    <tr><th>Project Name</th><th>Type</th><th>Area (sq ft)</th><th>Budget</th><th>Est. Cost</th><th>Est. Duration</th><th>Date</th></tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+                <div class="admin-pagination" id="estimatorPagination"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="gallery" class="admin-section d-none">
+          <!-- GALLERY TAB CONTENT -->
+          <div class="card shadow-sm border-0 mb-4" tabindex="0" role="button" aria-label="Gallery section">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h4 class="mb-0">Project Gallery</h4>
+                <button class="btn btn-success btn-sm" id="addGalleryBtn"><i class="bi bi-plus"></i> Add Image</button>
+              </div>
+              <div class="table-responsive">
+                <table class="table table-bordered table-hover table-admin" id="galleryTable">
+                  <thead class="table-light">
+                    <tr><th>Image</th><th>Title</th><th>Category</th><th>Description</th><th>Actions</th></tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+                <div class="admin-pagination" id="galleryPagination"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Chart.js CDN -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <!-- Dashboard Chart Canvas -->
+        <div class="container py-4">
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                  <h5 class="card-title">Projects by Status</h5>
+                  <canvas id="projectsStatusChart" height="100"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <!-- Add Gallery Image Modal -->
+  <div class="modal fade" id="addGalleryModal" tabindex="-1" aria-labelledby="addGalleryModalLabel" aria-modal="true" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form id="addGalleryForm">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addGalleryModalLabel">Add Gallery Image</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="galleryImageFile" class="form-label">Image File (URL or Upload)</label>
+              <input type="url" class="form-control mb-2" id="galleryImageUrl" placeholder="Paste image URL (optional)">
+              <input type="file" class="form-control" id="galleryImageFile" accept="image/*">
+            </div>
+            <div class="mb-3">
+              <label for="galleryTitle" class="form-label">Title</label>
+              <input type="text" class="form-control" id="galleryTitle" required>
+            </div>
+            <div class="mb-3">
+              <label for="galleryCategory" class="form-label">Category</label>
+              <select class="form-select" id="galleryCategory" required>
+                <option value="">Select category</option>
+                <option>Residential</option>
+                <option>Commercial</option>
+                <option>Renovation</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="galleryDesc" class="form-label">Description</label>
+              <textarea class="form-control" id="galleryDesc" rows="2"></textarea>
+            </div>
+            <div id="galleryUploadMsg" class="alert d-none mt-2"></div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-success">Add Image</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- Notification Popup -->
+  <div id="admin-notification" class="toast align-items-center text-bg-primary border-0 position-fixed bottom-0 end-0 m-4 d-none" role="alert" aria-live="assertive" aria-atomic="true" style="z-index: 9999; min-width: 300px;">
+    <div class="d-flex">
+      <div class="toast-body" id="admin-notification-msg">Notification</div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close" onclick="document.getElementById('admin-notification').classList.add('d-none')"></button>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+  <script src="src/admin-estimator.js"></script>
+  <script src="src/admin-gallery.js"></script>
+  <script src="src/pages/admin-panel.js"></script>
+</body>
+</html>

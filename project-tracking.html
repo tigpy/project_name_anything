@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project Tracking | CBMS</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="src/styles/project-tracking.css">
+  <!-- Add Chart.js and Frappe Gantt CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/frappe-gantt@0.6.2/dist/frappe-gantt.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+    <div class="container"><a class="navbar-brand" href="Index.html"><i class="bi bi-building"></i> CBMS</a></div>
+  </nav>
+  <div class="container">
+    <h1 class="mb-4 text-success"><i class="bi bi-bar-chart"></i> Project Tracking</h1>
+    
+    <a href="Index.html#services" class="btn btn-outline-success mt-3"><i class="bi bi-arrow-left"></i> Back to Services</a>
+  </div>
+
+  <!-- Project Tracking Features Section -->
+  <section class="container py-5" id="project-tracking-features">
+    <h2 class="text-center mb-4"><i class="bi bi-bar-chart"></i> Project Tracking Features</h2>
+    <div class="row g-4">
+      <!-- Milestone Tracking -->
+      <div class="col-md-6">
+        <div class="card border-success h-100">
+          <div class="card-body">
+            <h5 class="card-title"><i class="bi bi-flag text-success"></i> Milestone Tracking</h5>
+            <p class="card-text">Define, assign, and monitor project milestones to ensure timely completion of deliverables.</p>
+            <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#milestoneModal">View Milestones</button>
+          </div>
+        </div>
+      </div>
+      <!-- Gantt Chart Visualization -->
+      <div class="col-md-6">
+        <div class="card border-primary h-100">
+          <div class="card-body">
+            <h5 class="card-title"><i class="bi bi-diagram-3 text-primary"></i> Gantt Chart Visualization</h5>
+            <p class="card-text">Visualize your project timeline and dependencies with interactive Gantt charts.</p>
+            <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#ganttModal">View Gantt Chart</button>
+          </div>
+        </div>
+      </div>
+      <!-- Real-time Notifications -->
+      <div class="col-md-6">
+        <div class="card border-warning h-100">
+          <div class="card-body">
+            <h5 class="card-title"><i class="bi bi-bell text-warning"></i> Real-time Notifications</h5>
+            <p class="card-text">Stay updated with instant notifications on project changes and deadlines.</p>
+            <button class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#notificationModal">View Notifications</button>
+          </div>
+        </div>
+      </div>
+      <!-- Progress Analytics -->
+      <div class="col-md-6">
+        <div class="card border-info h-100">
+          <div class="card-body">
+            <h5 class="card-title"><i class="bi bi-graph-up-arrow text-info"></i> Progress Analytics</h5>
+            <p class="card-text">Analyze project progress with visual analytics and performance reports.</p>
+            <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#analyticsModal">View Analytics</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Milestone Modal -->
+  <div class="modal fade" id="milestoneModal" tabindex="-1" aria-labelledby="milestoneModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="milestoneModalLabel">Milestone Tracking</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div id="milestoneFormFeedback" aria-live="polite" class="mb-2"></div>
+          <table class="table table-striped" aria-label="Milestone Table">
+            <thead>
+              <tr>
+                <th>Milestone</th>
+                <th>Due Date</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Foundation Complete</td>
+                <td>2025-06-10</td>
+                <td><span class="badge bg-success">Completed</span></td>
+              </tr>
+              <tr>
+                <td>Framing</td>
+                <td>2025-06-20</td>
+                <td><span class="badge bg-warning text-dark">In Progress</span></td>
+              </tr>
+              <tr>
+                <td>Roofing</td>
+                <td>2025-07-01</td>
+                <td><span class="badge bg-secondary">Pending</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gantt Chart Modal -->
+  <div class="modal fade" id="ganttModal" tabindex="-1" aria-labelledby="ganttModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="ganttModalLabel">Gantt Chart Visualization</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div id="gantt-chart-container" style="width:100%;height:400px;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notifications Modal -->
+  <div class="modal fade" id="notificationModal" tabindex="-1" aria-labelledby="notificationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="notificationModalLabel">Real-time Notifications</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div id="notificationFormFeedback" aria-live="polite" class="mb-2"></div>
+          <ul class="list-group" aria-label="Notifications List">
+            <li class="list-group-item"><i class="bi bi-bell-fill text-warning"></i> <strong>Framing milestone</strong> is now <span class="badge bg-warning text-dark">In Progress</span>.</li>
+            <li class="list-group-item"><i class="bi bi-bell-fill text-success"></i> <strong>Foundation milestone</strong> marked as <span class="badge bg-success">Completed</span>.</li>
+            <li class="list-group-item"><i class="bi bi-bell-fill text-secondary"></i> <strong>Roofing milestone</strong> is <span class="badge bg-secondary">Pending</span>.</li>
+          </ul>
+          <div class="alert alert-info mt-3">
+            <i class="bi bi-info-circle"></i> Real-time notifications will appear here as your project progresses.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Progress Analytics Modal -->
+  <div class="modal fade" id="analyticsModal" tabindex="-1" aria-labelledby="analyticsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="analyticsModalLabel">Progress Analytics</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <canvas id="progress-analytics-chart" width="100%" height="300"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/frappe-gantt@0.6.2/dist/frappe-gantt.min.js"></script>
+  <script src="src/pages/project-tracking.js"></script>
+</body>
+</html>

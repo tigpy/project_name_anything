@@ -1,0 +1,100 @@
+/* Worker Management page specific styles extracted from worker-management.html */
+body {
+  background: linear-gradient(135deg, #232526 0%, #283e51 100%), url('https://www.transparenttextures.com/patterns/cubes.png');
+  min-height: 100vh;
+  color: #eafaff;
+  font-family: 'Roboto', Arial, sans-serif;
+}
+.section-divider {
+  border: none;
+  border-top: 3px solid #0dcaf0;
+  width: 60px;
+  margin: 2rem auto 2.5rem auto;
+  opacity: 0.8;
+}
+h1, h2 {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 16px #0dcaf044, 0 1px 2px #000;
+  color: #0dcaf0;
+}
+.card {
+  border-radius: 1.5rem;
+  background: rgba(34, 49, 63, 0.85);
+  box-shadow: 0 8px 32px 0 rgba(13,202,240,0.18), 0 1.5px 6px 0 rgba(0,0,0,0.18);
+  border: 1px solid rgba(13,202,240,0.15);
+  transition: transform 0.18s, box-shadow 0.18s;
+  backdrop-filter: blur(4px);
+  color: #eafaff;
+}
+.card:hover {
+  transform: translateY(-7px) scale(1.025);
+  box-shadow: 0 16px 40px 0 rgba(13,202,240,0.28), 0 2px 8px 0 rgba(0,0,0,0.18);
+  border-color: #0dcaf0;
+}
+.btn-outline-info, .btn-info, .btn-outline-success, .btn-outline-warning, .btn-outline-primary {
+  border-radius: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px #0dcaf033;
+  color: #0dcaf0;
+  border-color: #0dcaf0;
+  background: transparent;
+  transition: background 0.2s, color 0.2s;
+}
+.btn-outline-info:hover, .btn-info:hover, .btn-outline-success:hover, .btn-outline-warning:hover, .btn-outline-primary:hover {
+  background: #0dcaf0;
+  color: #232526;
+  border-color: #0dcaf0;
+}
+.modal-content {
+  border-radius: 1.2rem;
+  background: rgba(34, 49, 63, 0.97);
+  box-shadow: 0 8px 32px 0 rgba(13,202,240,0.18);
+  border: 1px solid #0dcaf033;
+  color: #eafaff;
+}
+.table thead th {
+  background: #232526;
+  color: #0dcaf0;
+  font-weight: 700;
+  border-top: none;
+}
+.table, .table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: rgba(13,202,240,0.04);
+  color: #eafaff;
+}
+.table-striped > tbody > tr:nth-of-type(even) {
+  background-color: rgba(34,49,63,0.7);
+}
+.list-group-item {
+  border-radius: 0.7rem;
+  margin-bottom: 0.5rem;
+  background: rgba(13,202,240,0.10);
+  color: #eafaff;
+  border: 1px solid #0dcaf033;
+}
+.navbar, .navbar-dark.bg-info {
+  background: linear-gradient(90deg, #232526 0%, #0dcaf0 100%) !important;
+}
+a, a:visited {
+  color: #0dcaf0;
+  text-decoration: underline;
+}
+a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+::-webkit-scrollbar {
+  width: 8px;
+  background: #232526;
+}
+::-webkit-scrollbar-thumb {
+  background: #0dcaf0;
+  border-radius: 4px;
+}
+@media (max-width: 768px) {
+  .card { border-radius: 1rem; }
+  .modal-content { border-radius: 0.8rem; }
+}

@@ -1,0 +1,100 @@
+/* Project Tracking page specific styles extracted from project-tracking.html */
+body {
+  background: linear-gradient(135deg, #232526 0%, #234e38 100%), url('https://www.transparenttextures.com/patterns/cubes.png');
+  min-height: 100vh;
+  color: #eafff3;
+  font-family: 'Roboto', Arial, sans-serif;
+}
+.section-divider {
+  border: none;
+  border-top: 3px solid #43d39e;
+  width: 60px;
+  margin: 2rem auto 2.5rem auto;
+  opacity: 0.8;
+}
+h1, h2 {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 16px #43d39e44, 0 1px 2px #000;
+  color: #43d39e;
+}
+.card {
+  border-radius: 1.5rem;
+  background: rgba(34, 49, 43, 0.85);
+  box-shadow: 0 8px 32px 0 rgba(67,211,158,0.18), 0 1.5px 6px 0 rgba(0,0,0,0.18);
+  border: 1px solid rgba(67,211,158,0.15);
+  transition: transform 0.18s, box-shadow 0.18s;
+  backdrop-filter: blur(4px);
+  color: #eafff3;
+}
+.card:hover {
+  transform: translateY(-7px) scale(1.025);
+  box-shadow: 0 16px 40px 0 rgba(67,211,158,0.28), 0 2px 8px 0 rgba(0,0,0,0.18);
+  border-color: #43d39e;
+}
+.btn-outline-success, .btn-success, .btn-outline-primary, .btn-outline-warning, .btn-outline-info {
+  border-radius: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px #43d39e33;
+  color: #43d39e;
+  border-color: #43d39e;
+  background: transparent;
+  transition: background 0.2s, color 0.2s;
+}
+.btn-outline-success:hover, .btn-success:hover, .btn-outline-primary:hover, .btn-outline-warning:hover, .btn-outline-info:hover {
+  background: #43d39e;
+  color: #232526;
+  border-color: #43d39e;
+}
+.modal-content {
+  border-radius: 1.2rem;
+  background: rgba(34, 49, 43, 0.97);
+  box-shadow: 0 8px 32px 0 rgba(67,211,158,0.18);
+  border: 1px solid #43d39e33;
+  color: #eafff3;
+}
+.table thead th {
+  background: #232526;
+  color: #43d39e;
+  font-weight: 700;
+  border-top: none;
+}
+.table, .table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: rgba(67,211,158,0.04);
+  color: #eafff3;
+}
+.table-striped > tbody > tr:nth-of-type(even) {
+  background-color: rgba(34,49,43,0.7);
+}
+.list-group-item {
+  border-radius: 0.7rem;
+  margin-bottom: 0.5rem;
+  background: rgba(67,211,158,0.10);
+  color: #eafff3;
+  border: 1px solid #43d39e33;
+}
+.navbar, .navbar-dark.bg-success {
+  background: linear-gradient(90deg, #232526 0%, #43d39e 100%) !important;
+}
+a, a:visited {
+  color: #43d39e;
+  text-decoration: underline;
+}
+a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+::-webkit-scrollbar {
+  width: 8px;
+  background: #232526;
+}
+::-webkit-scrollbar-thumb {
+  background: #43d39e;
+  border-radius: 4px;
+}
+@media (max-width: 768px) {
+  .card { border-radius: 1rem; }
+  .modal-content { border-radius: 0.8rem; }
+}
